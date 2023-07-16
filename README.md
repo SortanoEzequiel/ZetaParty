@@ -1,1 +1,1 @@
-# ZetaPary
+# ZetaParty
