@@ -43,12 +43,11 @@ let capsEntries = entries.map((entry) => [
 sequelize.models = Object.fromEntries(capsEntries);
 
 //Accedo a los modelos haciendo destructuring
-let {Plate, Types} = sequelize.models;
+let {Plate} = sequelize.models;
 
 /////////////ACA VAN LAS RELACIONES//////////////////////////
 
-Plate.belongsToMany(Types, {through: 'Plate_type'});
-Types.belongsToMany(Plate, {through: 'Plate_type'});
+
 
 
 //////////////////////////////////////////////////////

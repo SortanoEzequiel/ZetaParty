@@ -10,6 +10,10 @@ module.exports = (sequelize) => {
 				primaryKey: true,
 				allowNull: false,
 			},
+			price:{
+				type:DataTypes.INTEGER,
+				allowNull: false,
+			},
 			name: {
 				type: DataTypes.STRING,
 				allowNull: false,
@@ -22,10 +26,13 @@ module.exports = (sequelize) => {
 				type: DataTypes.STRING,
 				allowNull: true,
 			},
+			typeDiet:{
+				type:DataTypes.STRING,
+				allowNull: true,
+			},
 		},
 		{
 			timestamps: false,
-			freezeTableName: true,
 		}
 	);
 };

@@ -5,15 +5,14 @@ async function postProductHandler (req, res){
 		name,
 		image,
 		ingredients,
-        type,
+        typeId,
 	} = req.body[0];
-
 	try {
 		const newProduct = await createProduct(
 			name,
-			image,
 			ingredients,
-			type,
+			image,
+			typeId,
 		);
 		res.status(200).json(newProduct);
 	} catch (error) {
