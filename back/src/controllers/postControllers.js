@@ -9,8 +9,8 @@ const typesDiets = async (req, res) => {
 }
 
 async function createProduct(req, res){
-	const {price, name, ingredients, image, typeDiet} = req.body[0]
-	
+	const {price, name, ingredients, image, typeDiet} = req.body
+	console.log(req.body);
 	try {
 	    const dieta = await Plate.create({
 		price,
