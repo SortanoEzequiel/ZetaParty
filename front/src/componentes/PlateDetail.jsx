@@ -13,7 +13,7 @@ export default function PlateDetail(){
     useEffect(() => {
         dispatch(getDetail(id));
     }, [dispatch, id])
-    console.log(plateDetail);
+
  
 
     

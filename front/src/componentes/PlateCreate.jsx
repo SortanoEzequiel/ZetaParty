@@ -1,8 +1,11 @@
+
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { getTypes, postPlate, postPlates} from "../actions/action";
+import {FormGroup, Input} from "reactstrap";
+import { postPlate} from "../actions/action";
 import styles from './plateCreate.module.css'
+import uploadImage from "./uploadImage";
+
 
 function validate(post) {
     let errors = {};
@@ -29,9 +32,13 @@ function validate(post) {
 
 
 
+
+
 export default function PlateCreate() {
     const dispatch = useDispatch();
     const [errors, setErrors] = useState({});
+    
+ 
 
 
     const [post, setPost] = useState({
@@ -41,16 +48,29 @@ export default function PlateCreate() {
         image: "",
         typeDiet: "",
     })
+   
+   
 
-    function handleInputChange(e) {
-        setPost({
-            ...post,
-            [e.target.name]: e.target.value
-        });
-        setErrors(validate({
-            ...post,
-            [e.target.name]: e.target.value
-        }));
+   const  handleInputChange = async(e)  => {
+        if(e.target.name=== "image"){
+            let imageUrl = await uploadImage(e.target.files[0])
+            console.log(imageUrl);
+            setErrors(validate({
+                ...post,
+                image: imageUrl
+            }));
+            setPost({...post, image: imageUrl});
+        }else{
+            setPost({
+                ...post,
+                [e.target.name]: e.target.value
+            });
+            setErrors(validate({
+                ...post,
+                [e.target.name]: e.target.value
+            }));
+        }
+       
     };
 
     
@@ -91,8 +111,13 @@ export default function PlateCreate() {
                         </div>  
                            
                         <div>
-                            <label>Imagen</label>
-                            <input type="text"  value={post.image} name='image' onChange={e => handleInputChange(e)} />
+                            <label> Subir Imagen</label>
+                          <input
+                             type="file"
+                             id = "image"
+                             name="image"
+                             onChange={e => handleInputChange(e)}/>
+                         
                             {errors.image && (
                                 <p>{errors.image}</p>
                             )}

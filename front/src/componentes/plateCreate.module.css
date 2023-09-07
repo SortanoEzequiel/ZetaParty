@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
-    /* background-image: url("../imagen/a.jpg"); */
+    background-image: url("../imagen/fondo2.jpg");
 }
 .bkg{
     background-image: lightblue;

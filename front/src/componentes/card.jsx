@@ -7,7 +7,7 @@ const Card = (props) => {
         <div className={styles.caja}>
             
             <div className={styles.img}>
-            <img src={props.image} alt="" width="100%" height="150" /> 
+            <img src={props.img} alt="" width="100%" height="150" /> 
             </div>
             <div className={styles.contenido}>
             <h2 className={styles.h4}>{props.name}</h2>
