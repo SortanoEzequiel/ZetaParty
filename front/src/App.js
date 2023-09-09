@@ -6,6 +6,7 @@ import LandingPage from './componentes/Landing_page';
 import NavBar from './componentes/NavBar';
 import PlateDetail from './componentes/PlateDetail';
 import PlateCreate from './componentes/PlateCreate';
+
 function App() {
   
   return (
@@ -14,8 +15,11 @@ function App() {
       <Routes>
         
         <React.Fragment>
+        
+
         <Route path="/" element = {<LandingPage />} />
         
+      
         <Route path = "/home" element = {<Home />}/>
         <Route path = "/create" element = {<PlateCreate />}/>
         <Route path = "/plate/:id" element = {<PlateDetail />}/> 
