@@ -1,32 +1,47 @@
 .menu{
     list-style:none;
-    margin:0;
-    padding:0;
+    margin: auto;
+    padding:5px;
     width: 100%;
     position:relative;
-    background-color: black;
-    z-index:7;
+    background-color: green;
+    display: inline-block;
 }
 .menu li{
-    width: 20%;
+    width: 30%;
     height: 100%;
-    margin:0;
+    margin: 5px;
     padding:0;
     display: inline-block;
 }
 
 .menu li a{
-    display:inline-block;
+    display:-webkit-inline-flex;
     width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    color: #18d170;
+    height: 10%;
+    justify-content:left;
+    align-items: right;
+    color: black;
     text-decoration: none;
     position: relative;
     font-size: 18px;
     z-index: 9;
     padding: 15px;
+    background-color: green;
+}
+
+.div{
+    display: inline-block;
+    width: 10%;
+    height: 5%;
+    justify-content: right;
+    align-items: right;
+    background-color: green;
+    text-decoration: none;
+    position:absolute;
+    font-size: 18px;
+    z-index: 9;
+    padding: 10px;
 }
 
 .menu li a:hover{

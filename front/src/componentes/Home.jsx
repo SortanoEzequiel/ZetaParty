@@ -26,7 +26,7 @@ export default function Home() {
     const currentPlates = plates.slice(firstplate, lastPlate) 
     const currentFiltro = filtrados.slice(firstplate, lastPlate)
     const [state, setState] = useState(1)
-
+   
     useEffect(()=>{
         dispatch(getPlates()) 
         dispatch(vaciarDetail())
@@ -54,20 +54,23 @@ export default function Home() {
                
             <div className={styles.filtros}>
                 <SearchBar returnToFirstPage = {returnToFirstPage}/>
-                <NavBar />
+                <NavBar/>
             </div>
                
             
             }
             <div>
              
-                <Paginate 
+           
+           
+           
+                {/* <Paginate 
                 platesPerPage={platesPerPage}
                 plates={plates?.length}
                 paginate={paginate}
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
-                />
+                /> */}
               
                 <div className={styles.contenedor}>
                     {
