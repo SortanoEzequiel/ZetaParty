@@ -8,12 +8,14 @@ import LogoutButton from "./LogoutButton";
 
 
 export default function NavBar(){
-    const {loginWithRedirect, isAuthenticated} = useAuth0()
+    const {loginWithRedirect, isAuthenticated, user} = useAuth0()
     return (
         <div>
              <ul className={styles.menu}>
                  <li><Link to='/home' className={styles.a}> Inicio </Link></li>
-                 <li><Link to='/create' className={styles.a}> Subir Plato </Link></li>
+                 { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
+				 <li><Link to='/create' className={styles.a}> Subir Plato </Link></li>
+			) : null} 
             </ul>
        <div className={styles.div}>
         <Profile/>
