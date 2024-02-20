@@ -9,15 +9,15 @@ const typesDiets = async (req, res) => {
 }
 
 async function createProduct(req, res){
-	const {price, name, ingredients, image, typeDiet} = req.body
+	const {price, name, description, image, type} = req.body
 	console.log(req.body);
 	try {
 	    const dieta = await Plate.create({
 		price,
 		name,
-		ingredients,
+		description,
 		image,
-		typeDiet
+		type,
 	});
 
 	

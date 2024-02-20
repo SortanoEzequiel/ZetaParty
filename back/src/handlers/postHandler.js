@@ -4,15 +4,15 @@ async function postProductHandler (req, res){
 	const {
 		name,
 		image,
-		ingredients,
-        typeId,
+		description,
+        type,
 	} = req.body[0];
 	try {
 		const newProduct = await createProduct(
 			name,
-			ingredients,
+			description,
 			image,
-			typeId,
+			type,
 		);
 		res.status(200).json(newProduct);
 	} catch (error) {

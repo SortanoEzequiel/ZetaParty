@@ -26,9 +26,25 @@ let getIdData = async (id) => {
 		throw Error('Plato no encontrado');
 	}
 };
+////////////////////////////////////////
 
+let deletePlate = async(req, res) => {
+	
+	let { id } = req.params
+	try {
+		await Plate.destroy({
+			where : {id : id}
+		})
+	let all = await getAll()
+		res.send(all)
+	} catch (error) {
+		throw Error(error)
+	}
+	
+}
 
 module.exports = {
     getAll,
     getIdData,
+	deletePlate,
 }

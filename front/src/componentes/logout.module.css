@@ -1,0 +1,9 @@
+.logout:hover{
+    cursor: pointer;
+}
+.div{
+    width: 100px;
+    position:absolute;
+    display: flex;
+    align-content: flex-start;
+}

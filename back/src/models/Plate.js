@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
 				type: DataTypes.STRING,
 				allowNull: false,
 			},
-			ingredients: {
+			description: {
 				type: DataTypes.STRING,
 				allowNull: true,
 			},
@@ -26,8 +26,8 @@ module.exports = (sequelize) => {
 				type: DataTypes.STRING,
 				allowNull: true,
 			},
-			typeDiet:{
-				type:DataTypes.STRING,
+			type:{
+				type:DataTypes.ARRAY(DataTypes.STRING),
 				allowNull: true,
 			},
 		},

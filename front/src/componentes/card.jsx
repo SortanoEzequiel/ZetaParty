@@ -1,30 +1,55 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import styles from "./card.module.css";
 import {Link} from "react-router-dom"; 
 import { useAuth0 } from "@auth0/auth0-react";
+import {useDispatch, useSelector} from "react-redux"
+import { deletePlate, getPlates } from "../actions/action";
+
+
+
+
 const Card = (props) => {
+   
     const {loginWithRedirect, isAuthenticated, user} = useAuth0()
+    const plates= useSelector(state=>state.plate)
+    const [state, setState] = useState(true)
+    const dispatch = useDispatch();
+    
+    const onClose =  (id) => {
+        dispatch(deletePlate(id))
+        dispatch(getPlates)
+        setState(!state)
+     
+    }
+    
+    
+    
+    let id = props.id;
     return(
-        <div className={styles.caja}>
-               { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
+        <section className={styles.contenedor}>
+       
+          <div className={styles.sliderwrapper}>
+          
+        
+              <div className={styles.slider}>
+              { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
 				 <div> 
-                   <button>X</button> 
+                    <button onClick={() => onClose(id)} className={styles.button}>X</button>
                  </div>
 			) : null} 
-            <div className={styles.img}>
-            <img src={props.img} alt="" width="100%" height="150" /> 
-            </div>
-            <div className={styles.contenido}>
-            <h2 className={styles.h4}>{props.name}</h2>
-             <h2 className={styles.h4}>{props.type}</h2>  
-             <Link to= {'/plate/' + props.id} className={styles.link}>
-             <h3 className={styles.h4}>Detalle</h3>
-             </Link>
-             <h2 className={styles.h4}>${props.price}</h2>
+                <img id="slide-1"  alt=""> {props.image}</img> 
+                <img id="slide-2"   alt=""/> 
+                <img id="slide-3"  alt="" /> 
             </div>
             
+             <div className={styles.slidernav}>
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+             </div>
+           </div>
+        </section >
 
-        </div>
     )
 }
 

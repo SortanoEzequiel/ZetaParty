@@ -5,6 +5,7 @@ import {FormGroup, Input} from "reactstrap";
 import { postPlate} from "../actions/action";
 import styles from './plateCreate.module.css'
 import uploadImage from "./uploadImage";
+import NavBar from "./NavBar";
 
 
 function validate(post) {
@@ -18,10 +19,10 @@ function validate(post) {
         if(post.price <= 0) errors.price = 'El precio debe ser un valor positivo';
     }else{errors.price = 'Ingresar precio'}
 
-    if(post.ingredients){
+    if(post.description){
         if(post.ingredents <= 0 ) errors.ingredents = "Agregar ingredientes"
     }
-    else{errors.ingredients = 'Agregar ingredientes'}
+    else{errors.description = 'Agregar ingredientes'}
 
     if(!post.image){
       errors.image = 'Subir imagen del plato'
@@ -38,15 +39,16 @@ export default function PlateCreate() {
     const dispatch = useDispatch();
     const [errors, setErrors] = useState({});
     
+    const types = ["Pizza party","Asado/Parrillero","Mila party","Tacos party","Pastas party","Salon + Catering"]
  
 
 
     const [post, setPost] = useState({
         price: 0,
         name: "",
-        ingredients:[],
+        description:"",
         image: "",
-        typeDiet: "",
+        type: [],
     })
    
    
@@ -73,6 +75,13 @@ export default function PlateCreate() {
        
     };
 
+   function handleSelectType(e){
+   if(!post.type.includes(e.target.value))
+   setPost({
+   ...post,
+    type:[...post.type, e.target.value]})
+   }
+
     
     function handleSubmit(e) {
         e.preventDefault();
@@ -81,21 +90,31 @@ export default function PlateCreate() {
     console.log(post);
             dispatch(postPlate(post))
             alert('¡Platocreado!')
+            setPost({
+                price: 0,
+                name: "",
+                description:"",
+                image: "",
+                type: "",
+            })
         }
     };
 
        
 
     return (
+       <>
+       <div><NavBar/></div>
         <div className={styles.container}>
+            
             <div className={styles.bkg} />
             <div className={styles.bkgcolor}>
                 <div className={styles.form}>
-                    <h1>Por favor, rellene todos los campos</h1>
+                    <h1>Rellenar campos</h1>
                     <form onSubmit={e => handleSubmit(e)}>
                        
                         <div>
-                            <label>Nombre del Plato</label>
+                            <label>Plato</label>
                             <input type="text"  value={post.name} name='name' onChange={e => handleInputChange(e)} />
                             {errors.name && (
                                 <p>{errors.name}</p>
@@ -111,7 +130,7 @@ export default function PlateCreate() {
                         </div>  
                            
                         <div>
-                            <label> Subir Imagen</label>
+                            <label>Imagen</label>
                           <input
                              type="file"
                              id = "image"
@@ -123,25 +142,39 @@ export default function PlateCreate() {
                             )}
                         </div> 
                         <div>
-                            <label>Ingredientes</label>
-                            <input type="array" value={post.ingredients} name='ingredients' onChange={e => handleInputChange(e)} />
-                            {errors.ingredients&& (
-                                <p>{errors.ingredients}</p>
+                            <label>Descripcion</label>
+                            <input type="text" value={post.description} name='description' onChange={e => handleInputChange(e)} />
+                            {errors.description&& (
+                                <p>{errors.description}</p>
                             )}
                         </div> 
                         <div>
-                            <label>Tipo de dieta</label>
-                            <input type="text"  value={post.typeDiet} name='typeDiet' onChange={e => handleInputChange(e)} />
+                            <label></label>
+                            <input type="text"  value={post.type} name='type' onChange={e => handleInputChange(e)} />
+                            {errors.type && (
+                                <p>{errors.type}</p>
+                            )}
+                             <select onChange={e => handleSelectType(e)}value='default'
+                            className={styles.Select}>
+                                <option value="default" disabled className={styles.Option}>Party</option>
+                                {
+                                    types && types.map(d => (
+                                        <option value={d.types} key={d} className={styles.Option}>{d}</option>
+                                    ))
+                                }
+                            </select>
                         </div> 
             
                                  
                         
-
+                         <div className={styles.buttoncontent}>
                         <button type='submit' className={styles.createButton}>¡Crear!</button>
+                        </div>
                     </form>
                     
                 </div>
             </div>
         </div>
+        </>
     )                         
 };

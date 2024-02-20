@@ -6,7 +6,8 @@ import styles from "./home.module.css";
 import Paginate from "./paginate";
 import SearchBar from "./searchBar";
 import NavBar from "./NavBar";
-
+import  {deletePlate}  from "../actions/action";
+import imgHome from "../imagen/home4.jpeg"
 
 
 export default function Home() {
@@ -27,6 +28,8 @@ export default function Home() {
     const currentFiltro = filtrados.slice(firstplate, lastPlate)
     const [state, setState] = useState(1)
    
+    
+
     useEffect(()=>{
         dispatch(getPlates()) 
         dispatch(vaciarDetail())
@@ -48,20 +51,22 @@ export default function Home() {
         setCurrentPage(1)
     }
     return (
-        
-        <div className={styles.home}>
+        <>
+        <NavBar/>
+        <div className={styles.cont}>
+            
             {
-               
-            <div className={styles.filtros}>
-                <SearchBar returnToFirstPage = {returnToFirstPage}/>
-                <NavBar/>
-            </div>
+                   currentPlates ? currentPlates.map( el => {
+                    return <Card name={el.name} type={el.type} id={el.id} img={el.image} price={el.price} key={el.id} /> }):
+                   currentFiltro.map( el => {
+                    return <Card name={el.name} type={el.typet} id={el.id} img={el.image} price={el.price} key={el.id} /> })
+            }
+     
+              
                
             
-            }
-            <div>
-             
-           
+            
+          
            
            
                 {/* <Paginate 
@@ -72,7 +77,8 @@ export default function Home() {
                 setCurrentPage={setCurrentPage}
                 /> */}
               
-                <div className={styles.contenedor}>
+             
+                {/* <div className={styles.contenedor}>
                     {
                        
                    
@@ -84,10 +90,11 @@ export default function Home() {
                    }
                     
                     
-                </div>
+                </div> */}
                
-             </div>
+            
             
         </div>
+        </>
     )
 }

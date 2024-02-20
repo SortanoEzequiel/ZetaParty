@@ -8,21 +8,20 @@ import PlateDetail from './componentes/PlateDetail';
 import PlateCreate from './componentes/PlateCreate';
 import WhatsApp from "./componentes/WhatsApp";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import styles from "./componentes/home.module.css"
 function App() {
   const {pathname} = useLocation();
 
   return (
  
-    <div>
+    <div className={styles.cont}>
       	  
       <Routes>
-      
+        
         <React.Fragment>
         
         
         <Route path="/" element = {<Home />} />
-        
       
         <Route path = "/home" element = {<Home />}/>
         <Route path = "/create" element = {<PlateCreate />}/>
