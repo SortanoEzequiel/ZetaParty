@@ -84,10 +84,10 @@ export default function PlateCreate() {
 
     
     function handleSubmit(e) {
-        e.preventDefault();
-        if (Object.values(errors).length > 0) alert("Por favor rellenar todos los campos")
-        else {
-    console.log(post);
+    //     e.preventDefault();
+    //     if (Object.values(errors).length > 0) alert("Por favor rellenar todos los campos")
+    //     else {
+    // console.log(post);
             dispatch(postPlate(post))
             alert('¡Platocreado!')
             setPost({
@@ -97,7 +97,7 @@ export default function PlateCreate() {
                 image: "",
                 type: "",
             })
-        }
+        // }
     };
 
        

@@ -1,13 +1,19 @@
 import React, { useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux"
 import {getPlates,  vaciarDetail} from "../actions/action";
-import Card from "./card";
+import Card from "./cardPizza";
 import styles from "./home.module.css";
 import Paginate from "./paginate";
 import SearchBar from "./searchBar";
 import NavBar from "./NavBar";
 import  {deletePlate}  from "../actions/action";
 import imgHome from "../imagen/home4.jpeg"
+import CardParrilla from "./cardParrilla";
+import CardMila from "./cardMila";
+import CardTacos from "./cardTacos";
+import CardPastas from "./cardPastas";
+import CardSalon from "./cardSalon";
+import Footer from "./Footer";
 
 
 export default function Home() {
@@ -15,7 +21,7 @@ export default function Home() {
     const plates= useSelector(state=>state.plate)
     const type = useSelector(state => state.types)
     const filtrados = useSelector(state => state.filtrados)
-
+    
 
     
 
@@ -28,14 +34,19 @@ export default function Home() {
     const currentFiltro = filtrados.slice(firstplate, lastPlate)
     const [state, setState] = useState(1)
    
-    
-
+    const typePizzaParty = currentPlates.filter(el => el.type.includes("Pizza party"))
+    const typeAsadoParty = currentPlates.filter(el => el.type.includes("Asado"))
+    const typeMilaParty = currentPlates.filter(el => el.type.includes("Mila party"))
+    const typeTacosParty = currentPlates.filter(el => el.type.includes("Tacos"))
+    const typePastasParty = currentPlates.filter(el => el.type.includes("Pastas"))
+    const typeSalonParty = currentPlates.filter(el => el.type.includes("Salon"))
+    // ["Pizza party","Asado/Parrillero","Mila party","Tacos party","Pastas party","Salon + Catering"]
     useEffect(()=>{
         dispatch(getPlates()) 
         dispatch(vaciarDetail())
     },[dispatch])
 
-
+    console.log(typePizzaParty);
    
     // function handlerOrderByTypes(e) {
     //     dispatch(orderByTypes(e.target.value))
@@ -54,44 +65,17 @@ export default function Home() {
         <>
         <NavBar/>
         <div className={styles.cont}>
-            
-            {
-                   currentPlates ? currentPlates.map( el => {
-                    return <Card name={el.name} type={el.type} id={el.id} img={el.image} price={el.price} key={el.id} /> }):
-                   currentFiltro.map( el => {
-                    return <Card name={el.name} type={el.typet} id={el.id} img={el.image} price={el.price} key={el.id} /> })
-            }
-     
-              
-               
-            
-            
-          
-           
-           
-                {/* <Paginate 
-                platesPerPage={platesPerPage}
-                plates={plates?.length}
-                paginate={paginate}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                /> */}
-              
-             
-                {/* <div className={styles.contenedor}>
-                    {
-                       
-                   
-                           currentPlates === 1? currentPlates.map( el => {
-                            return <Card name={el.name} type={el.typeDiet} id={el.id} img={el.image} price={el.price} key={el.id} /> }):
-                           currentFiltro.map( el => {
-                            return <Card name={el.name} type={el.typeDiet} id={el.id} img={el.image} price={el.price} key={el.id} /> })
-                        
-                   }
-                    
-                    
-                </div> */}
-               
+            <div className={styles.card}>
+            <Card/>
+            <CardParrilla/>
+            <CardMila/>
+            <CardTacos/>
+            <CardPastas/>
+            <CardSalon/>
+            </div>
+          <div className={styles.about}>
+            <Footer/>
+          </div>
             
             
         </div>

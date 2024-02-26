@@ -8,49 +8,63 @@ import { deletePlate, getPlates } from "../actions/action";
 
 
 
-const Card = (props) => {
+const CardMila = (props) => {
    
     const {loginWithRedirect, isAuthenticated, user} = useAuth0()
     const plates= useSelector(state=>state.plate)
     const [state, setState] = useState(true)
     const dispatch = useDispatch();
+    const typeMilaParty = plates.filter(el => el.type.includes("Mila party"))
+
     
     const onClose =  (id) => {
         dispatch(deletePlate(id))
-        dispatch(getPlates)
-        setState(!state)
+        // dispatch(getPlates)
+        setState(true ? false : true)
      
     }
+   
     
     
-    
-    let id = props.id;
+  
+
     return(
+        <>
+        
         <section className={styles.contenedor}>
        
           <div className={styles.sliderwrapper}>
           
         
               <div className={styles.slider}>
-              { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
+              {/* { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
 				 <div> 
                     <button onClick={() => onClose(id)} className={styles.button}>X</button>
                  </div>
-			) : null} 
-                <img id="slide-1"  alt=""> {props.image}</img> 
-                <img id="slide-2"   alt=""/> 
-                <img id="slide-3"  alt="" /> 
+			) : null}  */}
+            <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708550193/images/u7istxx0lewo9foec2xn.jpg" alt=""></img> 
+            {
+              
+               typeMilaParty? typeMilaParty.map(el =><img src={el.image} alt=""></img>):""
+            }
+           
+            
+           
+        
+        
+                
+               
             </div>
             
              <div className={styles.slidernav}>
-                <a href="#slide-1"></a>
-                <a href="#slide-2"></a>
-                <a href="#slide-3"></a>
+                {/* <a href={props.id}></a>
+                <a href={props.id}></a> */}
+           
              </div>
            </div>
         </section >
-
+        </>
     )
 }
 
-export default Card
+export default CardMila

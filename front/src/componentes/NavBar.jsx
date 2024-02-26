@@ -36,11 +36,11 @@ export default function NavBar(){
              
                <div className={`links ${clicked ? 'active' : ''}`}>  
 
-                 <a onClick={handleClick} href="/"> <Link to='/home' > Inicio </Link> </a>
+                 <a  href="/"> <Link to='/home' > Inicio </Link> </a>
                 
                  {/* <a onClick={handleClick} href="/"> Nosotros </a> */}
                  { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
-				<a onClick={handleClick} href="/"> <Link to='/create' > Subir Plato </Link> </a>
+				<a  href="/"> <Link to='/create' > Subir Plato </Link> </a>
 			) : null} 
                 <a  className={styles.a} href="/">
            {isAuthenticated ? <LogoutButton/> :  <button className={styles.login} on onClick={() => loginWithRedirect()}>Iniciar sesion</button>}
@@ -78,10 +78,18 @@ const NavContainer = styled.nav`
       bottom: 40px;
       cursor:pointer;
       border-radius: 50%;
+      @media(max-width:768px){
+         display:flex;
+         margin:0px;
+         bottom: 40px;
+         justify-content: center;
+         cursor:pointer;
+         border-radius: 50%;
+      }
      
 }
 .logo img{
-   z-index: 2;
+   
    width: auto;
    height: 60px;
    padding-left: 1px;
@@ -89,6 +97,16 @@ const NavContainer = styled.nav`
    padding-bottom: 1px ;
    padding-bottom: 1px;
    transition: all 0.3s;
+   @media(max-width:768px){
+      
+      z-index:2;
+      width: auto;
+      height: 58px;
+      padding-left: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px ;
+      padding-bottom: 0px;
+   }
   
 } 
 padding: .4rem;
@@ -118,6 +136,7 @@ a{
    width: 120px;
    height: 25px;
    position:absolute;
+  
 }
 .links{
    width:500px;
@@ -131,6 +150,7 @@ a{
    display:flex;
    justify-content:flex-start;
    align-items: center;
+   z-index:2;
    a{
       color:white;
       font-size:2rem;
@@ -139,10 +159,12 @@ a{
    @media(min-width:768px){
       position:initial;
       margin:0;
+      
       a{
          font-size:1rem;
          color:white;
          display:inline;
+        
       }
       display:block;
    }
@@ -157,10 +179,12 @@ a{
    left: 0;
    right: 0;
    text-align:center;
+   justify-content:center;
    a{
       font-size: 2rem;
       margin-top: 1rem;
       color: white;
+     
    }
    .navbar_a__CLoxg{
       position:absolute;
@@ -175,6 +199,7 @@ a{
    @media(min-width: 768px){
       display:none;
    }
+   z-index:5;
 }
 `
 
@@ -185,15 +210,16 @@ top:-1000px;
 left:-1000px;
 width:100%;
 height:100%;
-z-index:-1;
+z-index:1;
 transition: all .6s ease;
 &.active{
    transition: all .6s ease ;
-   border-radius:0 0 80% 0;
+   border-radius:0% 0 10% 10%;
    width: 100%;
    height:100%;
    top:0;
    left:0;
+  
 }
 
 `

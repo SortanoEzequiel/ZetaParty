@@ -1,12 +1,8 @@
 let cache = {};
 
 let uploadImage = async (file) => {
-	// if (cache.imag === file) {
-	// 	console.log('el url es:' + img.secure_url);
-	// 	return img.secure_url;
-	// }
-	// cache.imag = file;
-	console.log(file);
+	
+
 
 	let data = new FormData();
 
@@ -24,7 +20,7 @@ let uploadImage = async (file) => {
 
 	let img = await res.json();
 
-	console.log(img.secure_url);
+
 
 	return img.secure_url;
 };

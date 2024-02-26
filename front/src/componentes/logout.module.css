@@ -1,5 +1,12 @@
+.logout{
+    @media(max-width:768px) {
+    margin-top: 1rem;
+    margin-left: 4px;
+}
+}
 .logout:hover{
     cursor: pointer;
+
 }
 .div{
     width: 100px;
