@@ -1,28 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
-ul {
-  padding: 1rem;
-  list-style-type: none;
+@import url('https://fonts.googleapis.com/css?family=Asfalto');
+
+
+.redes{
+  display: flex;
+  margin-top: 10px;
+  justify-content: center ;
+  align-items: center;
+  
 }
-a {
-  text-decoration: white;
+.a{
+  display:flex;
+  width: 50px;
+  height: 30px;
+  color: white;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
 }
-.img {
-  width: 100%;
-  height: 100%;
-}
+
 
 /* Main CSS */
 
-footer {
+.footer{
   background-color: #222;
-  padding: 0px;
-  height: 100%;
+  padding: 4px;
+  height: 500px;
+  width: 100%;
+  @media(max-width:768px){
+    width: 100%;
+    margin-top: 25px;
+    height:600px;
+    padding: 4px;
+    
+  } 
 }
 
-.p{
-  font-family: 'Roboto';
-  padding-top: 20px;
-  color: white;
-  text-align: start;
-  text-decoration: none;
+.prueba{
+  font-family: 'Asfalto';
+}
+
+
+.presentacion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:50%;
+  margin-left: 25%;
+  height: 100%;
+  margin-top:0px;
+  @media(max-width:768px){
+    margin:0.5%;
+    align-items: start;
+    width: 100%;
+    
+  } 
+}
+.h1{
+  font-family:'cursive';
+  font-size:35px;
+  text-transform:none;
+  @media(max-width:768px){
+    font-size:30px;
+    width: 100%;
+    padding: 8px;
+  } 
 }

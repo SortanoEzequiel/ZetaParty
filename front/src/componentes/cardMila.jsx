@@ -33,35 +33,13 @@ const CardMila = (props) => {
         
         <section className={styles.contenedor}>
        
-          <div className={styles.sliderwrapper}>
+      
           
-        
-              <div className={styles.slider}>
-              {/* { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
-				 <div> 
-                    <button onClick={() => onClose(id)} className={styles.button}>X</button>
-                 </div>
-			) : null}  */}
-            <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708550193/images/u7istxx0lewo9foec2xn.jpg" alt=""></img> 
-            {
-              
-               typeMilaParty? typeMilaParty.map(el =><img src={el.image} alt=""></img>):""
-            }
-           
+          <Link  className={styles.cardMila} to="milaparty">
+          
+          <span>Mila Party</span>
+          </Link>
             
-           
-        
-        
-                
-               
-            </div>
-            
-             <div className={styles.slidernav}>
-                {/* <a href={props.id}></a>
-                <a href={props.id}></a> */}
-           
-             </div>
-           </div>
         </section >
         </>
     )

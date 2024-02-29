@@ -32,8 +32,12 @@ const CardParrilla = (props) => {
         <>
         
         <section className={styles.contenedor}>
+        <Link  className={styles.cardParrilla} to="/parrillaParty">
+          
+          <span>Parrilla Party</span>
+          </Link>
        
-          <div className={styles.sliderwrapper}>
+          {/* <div className={styles.sliderwrapper}>
           
         
               <div className={styles.slider}>
@@ -42,26 +46,25 @@ const CardParrilla = (props) => {
                     <button onClick={() => onClose(id)} className={styles.button}>X</button>
                  </div>
 			) : null}  */}
-            <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708550298/images/idhh7ms7fef0borbmyfy.jpg" alt=""></img> 
+            {/* <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708550298/images/idhh7ms7fef0borbmyfy.jpg" alt=""></img> 
             {
               
                typeAsadoParty? typeAsadoParty.map(el =><img src={el.image} alt=""></img>):""
             }
-           
+            */}
             
            
         
         
                 
                
-            </div>
+            {/* </div>
             
              <div className={styles.slidernav}>
                 {/* <a href={props.id}></a>
                 <a href={props.id}></a> */}
            
-             </div>
-           </div>
+            
         </section >
         </>
     )

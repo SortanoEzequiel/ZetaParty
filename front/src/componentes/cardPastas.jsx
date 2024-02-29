@@ -33,35 +33,19 @@ const CardPastas = (props) => {
         
         <section className={styles.contenedor}>
        
-          <div className={styles.sliderwrapper}>
+
+        <Link  className={styles.cardPastas} to="pastasparty">
           
-        
-              <div className={styles.slider}>
-              {/* { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
-				 <div> 
-                    <button onClick={() => onClose(id)} className={styles.button}>X</button>
-                 </div>
-			) : null}  */}
-            <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708548425/images/vcx3us8om0v5hcbnteba.jpg" alt=""></img> 
-            {
-              
-               typePastasParty? typePastasParty.map(el =><img src={el.image} alt=""></img>):""
-            }
-           
+          <span>Pasta Party</span>
+          </Link>
+            
             
            
         
         
                 
                
-            </div>
             
-             <div className={styles.slidernav}>
-                {/* <a href={props.id}></a>
-                <a href={props.id}></a> */}
-           
-             </div>
-           </div>
         </section >
         </>
     )

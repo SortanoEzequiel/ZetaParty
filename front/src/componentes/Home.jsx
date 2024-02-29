@@ -14,6 +14,7 @@ import CardTacos from "./cardTacos";
 import CardPastas from "./cardPastas";
 import CardSalon from "./cardSalon";
 import Footer from "./Footer";
+import CardViandas from "./cardViandas";
 
 
 export default function Home() {
@@ -71,7 +72,9 @@ export default function Home() {
             <CardMila/>
             <CardTacos/>
             <CardPastas/>
+            <CardViandas/>
             <CardSalon/>
+            
             </div>
           <div className={styles.about}>
             <Footer/>

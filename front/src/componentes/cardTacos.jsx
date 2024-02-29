@@ -33,36 +33,20 @@ const CardTacos= (props) => {
         
         <section className={styles.contenedor}>
        
-          <div className={styles.sliderwrapper}>
+
+       <Link  className={styles.cardTacos} to="tacosparty">
+         
+         <span>Tacos Party</span>
+         </Link>
+           
+           
           
-        
-              <div className={styles.slider}>
-              {/* { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
-				 <div> 
-                    <button onClick={() => onClose(id)} className={styles.button}>X</button>
-                 </div>
-			) : null}  */}
-            <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708549364/images/kfllwn8fgfoilazhb1ft.jpg" alt=""></img> 
-            {
-              
-               typeTacosParty? typeTacosParty.map(el =><img src={el.image} alt=""></img>):""
-            }
-           
-            
-           
-        
-        
-                
+       
+       
                
-            </div>
-            
-             <div className={styles.slidernav}>
-                {/* <a href={props.id}></a>
-                <a href={props.id}></a> */}
+              
            
-             </div>
-           </div>
-        </section >
+       </section >
         </>
     )
 }

@@ -32,23 +32,26 @@ const Card = (props) => {
         <>
         
         <section className={styles.contenedor}>
-       
-          <div className={styles.sliderwrapper}>
+           <Link  className={styles.cardPizza} to="/pizzaparty">
+          
+           <span>Pizza Party</span>
+           </Link>
+          {/* <div className={styles.sliderwrapper}>
           
         
-              <div className={styles.slider}>
+              <div className={styles.slider}> */}
               {/* { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
 				 <div> 
                     <button onClick={() => onClose(id)} className={styles.button}>X</button>
                  </div>
 			) : null}  */}
            
-            <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708417889/images/aguzjgjkkyuzdywhtppv.jpg"alt=""></img> 
-           
+            {/* <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708417889/images/aguzjgjkkyuzdywhtppv.jpg"alt="Pizza party"></img> 
+            
             {
               
                typePizzaParty ? typePizzaParty.map(el =><img src={el.image} alt=""></img>):""
-            }
+            } */}
            
             
            
@@ -56,14 +59,14 @@ const Card = (props) => {
         
                 
                
-            </div>
+            {/* </div> */}
             
-             <div className={styles.slidernav}>
+             {/* <div className={styles.slidernav}>
                 {/* <a href={props.id}></a>
                 <a href={props.id}></a> */}
            
-             </div>
-           </div>
+        
+           {/* </div> */}
         </section >
         </>
     )

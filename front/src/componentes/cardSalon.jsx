@@ -31,22 +31,24 @@ const CardSalon = (props) => {
     return(
         <>
         
-        <section className={styles.contenedor}>
+        <section className={styles.contenedorSalon}>
        
-          <div className={styles.sliderwrapper}>
+
+        <Link  className={styles.cardSalon} to="catering">
+         
+         <span>Salon + Catering</span>
+         </Link>
           
-        
-              <div className={styles.slider}>
               {/* { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
 				 <div> 
                     <button onClick={() => onClose(id)} className={styles.button}>X</button>
                  </div>
 			) : null}  */}
-            <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708550406/images/kjtuczbaaipjqaaora6h.jpg" alt=""></img> 
+            {/* <img src="https://res.cloudinary.com/ezesortano/image/upload/v1708550406/images/kjtuczbaaipjqaaora6h.jpg" alt=""></img> 
             {
               
                typeSalonParty? typeSalonParty.map(el =><img src={el.image} alt=""></img>):""
-            }
+            } */}
            
             
            
@@ -54,14 +56,7 @@ const CardSalon = (props) => {
         
                 
                
-            </div>
-            
-             <div className={styles.slidernav}>
-                {/* <a href={props.id}></a>
-                <a href={props.id}></a> */}
            
-             </div>
-           </div>
         </section >
         </>
     )

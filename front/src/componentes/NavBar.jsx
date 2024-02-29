@@ -35,19 +35,19 @@ export default function NavBar(){
             </div>
              
                <div className={`links ${clicked ? 'active' : ''}`}>  
-
+               
                  <a  href="/"> <Link to='/home' > Inicio </Link> </a>
-                
+                 
                  {/* <a onClick={handleClick} href="/"> Nosotros </a> */}
                  { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
 				<a  href="/"> <Link to='/create' > Subir Plato </Link> </a>
 			) : null} 
-                <a  className={styles.a} href="/">
+                  
+               
+               
+                  <a  className={styles.a} href="/">
            {isAuthenticated ? <LogoutButton/> :  <button className={styles.login} on onClick={() => loginWithRedirect()}>Iniciar sesion</button>}
-           </a>     
-               
-               
-                 
+           </a> 
                  
                
                </div>
