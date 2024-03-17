@@ -15,6 +15,7 @@ import CardPastas from "./cardPastas";
 import CardSalon from "./cardSalon";
 import Footer from "./Footer";
 import CardViandas from "./cardViandas";
+import Navbartres from "./nav";
 
 
 export default function Home() {
@@ -64,8 +65,9 @@ export default function Home() {
     }
     return (
         <>
-        <NavBar/>
+        
         <div className={styles.cont}>
+        <Navbartres/>
             <div className={styles.card}>
             <Card/>
             <CardParrilla/>

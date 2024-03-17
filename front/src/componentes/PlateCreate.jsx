@@ -6,6 +6,7 @@ import { postPlate} from "../actions/action";
 import styles from './plateCreate.module.css'
 import uploadImage from "./uploadImage";
 import NavBar from "./NavBar";
+import Navbartres from "./nav";
 
 
 function validate(post) {
@@ -104,7 +105,7 @@ export default function PlateCreate() {
 
     return (
        <>
-       <div><NavBar/></div>
+       <div><Navbartres/></div>
         <div className={styles.container}>
             
             <div className={styles.bkg} />
@@ -142,7 +143,7 @@ export default function PlateCreate() {
                             )}
                         </div> 
                         <div>
-                            <label>Descripcion</label>
+                            <label>Descrip.</label>
                             <input type="text" value={post.description} name='description' onChange={e => handleInputChange(e)} />
                             {errors.description&& (
                                 <p>{errors.description}</p>

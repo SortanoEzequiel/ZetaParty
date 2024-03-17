@@ -5,6 +5,9 @@
     width: 20px;
     background-color: black;
 }
+.cont{
+    background-color: whitesmoke;
+}
 .filters{
     padding: 3px 5px;
     margin: 6px;
@@ -24,7 +27,7 @@
     flex-wrap: wrap;
     align-items: flex-start;
     gap:40px;
-
+    z-index:-2;
 }
 .about{
    

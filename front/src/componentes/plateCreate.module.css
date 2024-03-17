@@ -13,7 +13,8 @@
     @media(min-width:768px){
         
         flex-direction: column;
-        
+        width: 100%;
+        background-image: url("../imagen/fondoform.jpg");
       } 
 }
 .bkg{
@@ -139,7 +140,7 @@ textarea:focus ~ p, input:focus ~p, select:focus ~p{
     @media(max-width:768px){
         margin: 5px;
         padding: 2px 2px;
-        width: 30%;
+        width: 27%;
         
       } 
 }
