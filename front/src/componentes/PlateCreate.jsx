@@ -40,7 +40,7 @@ export default function PlateCreate() {
     const dispatch = useDispatch();
     const [errors, setErrors] = useState({});
     
-    const types = ["Pizza party","Asado/Parrillero","Mila party","Tacos party","Pastas party","Salon + Catering"]
+    const types = ["Pizza party","Asado/Parrillero","Mila party","Tacos party","Pastas party","Viandas", "Salon + Catering"]
  
 
 

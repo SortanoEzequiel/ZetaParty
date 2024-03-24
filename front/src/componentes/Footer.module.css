@@ -25,14 +25,16 @@
 .footer{
   background-color: #23394d;
   padding: 4px;
-  height: 500px;
+  height: 600px;
   width: 100%;
+  flex-wrap: wrap;
   @media(max-width:768px){
     width: 100%;
     margin-top: 25px;
     height:600px;
     padding: 4px;
-    
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
   } 
 }
 

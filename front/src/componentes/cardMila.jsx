@@ -35,7 +35,7 @@ const CardMila = (props) => {
        
       
           
-          <Link  className={styles.cardMila} to="milaparty">
+          <Link  className={styles.cardMila} to="/milaparty">
           
           <span>Mila Party</span>
           </Link>

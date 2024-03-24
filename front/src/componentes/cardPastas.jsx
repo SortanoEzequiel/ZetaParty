@@ -34,7 +34,7 @@ const CardPastas = (props) => {
         <section className={styles.contenedor}>
        
 
-        <Link  className={styles.cardPastas} to="pastasparty">
+        <Link  className={styles.cardPastas} to="/pastasparty">
           
           <span>Pasta Party</span>
           </Link>

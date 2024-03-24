@@ -54,7 +54,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
-  max-width: 1300px;
+ 
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -99,9 +99,11 @@ export const Menu = styled.ul`
   @media screen and (max-width: 960px) {
     background-color: #23394d;
     position: absolute;
-    top: 70px;
-    left: ${({ open }) => (open ? "0" : "-110%")}; //Import
+    top: 68px;
+    left: ${({ open }) => (open ? "0" : "-115%")}; //Import
     width: 100%;
+    height:100%;
+    padding-left:0px;
     height: 90vh;
     justify-content: center;
     flex-direction: column;
@@ -142,13 +144,13 @@ export const MenuItemLink = styled.a`
     color: white;
     }
   &:hover {
-    color: #fff;
-    background-color: #e0792a;
+    color: orange;
+
     transition: 0.5s all ease;
     
     div {
       svg {
-        fill: #23394d;
+        fill: orange;
       }
     }
   }
@@ -162,7 +164,7 @@ export const MenuItemLink = styled.a`
 
     svg {
       display: none;
-      fill: #e0792a;
+      fill: orange;
       margin-right: 0.5rem;
     }
   }
@@ -225,7 +227,7 @@ export const MobileIcon = styled.div`
     cursor: pointer;
     
     svg {
-      fill: #e07924;
+      fill: orange;
       margin-right: 0.5rem;
     }
   }

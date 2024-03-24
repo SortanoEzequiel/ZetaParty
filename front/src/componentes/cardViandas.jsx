@@ -34,7 +34,7 @@ const CardViandas = (props) => {
         <section className={styles.contenedor}>
        
 
-        <Link  className={styles.cardViandas} to="Viandas">
+        <Link  className={styles.cardViandas} to="/viandas">
           
           <span>Viandas</span>
           </Link>

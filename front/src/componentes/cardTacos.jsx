@@ -34,7 +34,7 @@ const CardTacos= (props) => {
         <section className={styles.contenedor}>
        
 
-       <Link  className={styles.cardTacos} to="tacosparty">
+       <Link  className={styles.cardTacos} to="/tacosparty">
          
          <span>Tacos Party</span>
          </Link>

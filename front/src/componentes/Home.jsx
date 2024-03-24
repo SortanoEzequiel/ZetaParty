@@ -48,7 +48,7 @@ export default function Home() {
         dispatch(vaciarDetail())
     },[dispatch])
 
-    console.log(typePizzaParty);
+    console.log("milahome",typeMilaParty);
    
     // function handlerOrderByTypes(e) {
     //     dispatch(orderByTypes(e.target.value))
@@ -67,7 +67,9 @@ export default function Home() {
         <>
         
         <div className={styles.cont}>
+   
         <Navbartres/>
+        
             <div className={styles.card}>
             <Card/>
             <CardParrilla/>

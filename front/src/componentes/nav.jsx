@@ -25,10 +25,15 @@ import logo from "../imagen/zeta.jpg"
 import {Link} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from "./LogoutButton";
+
+
+
 const Navbartres = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const {loginWithRedirect, isAuthenticated, user} = useAuth0()
   return (
+
+    <>
     <Container>
       <Wrapper>
         <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
@@ -96,6 +101,7 @@ const Navbartres = () => {
         </IconContext.Provider>
       </Wrapper>
     </Container>
+    </>
   );
 };
 

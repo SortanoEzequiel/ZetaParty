@@ -7,7 +7,17 @@
 }
 .cont{
     background-color: whitesmoke;
+    width: 100%;
+    margin-right: 0px;
+    padding: 0;
+    @media(max-width:768px){
+        width: 100%;
+        
+       
+        
+      } 
 }
+
 .filters{
     padding: 3px 5px;
     margin: 6px;
