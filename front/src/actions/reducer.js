@@ -9,6 +9,7 @@ import {
     DETAIL_VACIO,
     DELETE_PLATE,
     ORDER_BY_PIZZA,
+    UPDATE_PLATE,
 } from "./action";
 
 const initialState = {
@@ -52,18 +53,26 @@ function rootReducer (state = initialState, action){
             ...state,
             types: action.payload
         }
-        case ORDER_BY_PIZZA:
-            let type =[];
-            if(action.payload) {
-            type = state.plate.filter(element => element.type.map(el => el).includes("Pizza Party"))
-       } return {...state, filtrados:type}      
         case POST_PLATE:
             return{
-                ...state
+                ...state,
             }
+        case UPDATE_PLATE:
+           return {
+            ...state,
+            }
+        case ORDER_BY_TYPES:
+                let typ =[];
+            
+                if(action.payload) {
+                typ = state.plate.filter(element => element.type.includes(action.payload))
+                
+              } return {...state, types:typ} 
+                 
         case DELETE_PLATE:
             return{
                 ...state,
+                
             }
             default: return state
     }

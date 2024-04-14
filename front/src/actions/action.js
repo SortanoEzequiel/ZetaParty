@@ -9,6 +9,7 @@ export const ORDER_BY_TYPES = "ORDER_BY_TYPES";
 export const DETAIL_VACIO = "DETAIL_VACIO";
 export const DELETE_PLATE= "DELETE_PLATE";
 export const ORDER_BY_PIZZA = "ORDER_BY_PIZZA"
+export const UPDATE_PLATE = "UPDATE_PLATE"
 
 export function orderByPizza(payload){
     return{
@@ -60,10 +61,26 @@ export function postPlate (input) {
       
     }
 }
+
+export function updateProduct (post) {
+    let id = post.id
+    return async function (dispatch) {
+       
+        try {
+            const dbData = await axios.post(`http://localhost:3001/update/${id}`, post);
+            console.log(dbData);
+            return dispatch({ type:UPDATE_PLATE, payload:dbData.data});
+           
+        } catch (error) {
+            alert({error: error.message});
+        }
+    };
+};
+
 export function deletePlate (id) {
     return async function (dispatch){
         try {
-            const res = await axios.get(`http://localhost:3001/delete/${id}`,);
+            const res = await axios.get(`http://localhost:3001/delete/${id}`);
             return dispatch({ type:DELETE_PLATE, payload: res.data})
         } catch (error) {
            console.log(error);
@@ -71,3 +88,11 @@ export function deletePlate (id) {
       
     }
 }
+
+export function orderByTypes(payload){
+    return{
+        type: ORDER_BY_TYPES,
+        payload
+    }
+}
+

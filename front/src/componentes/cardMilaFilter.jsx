@@ -32,15 +32,16 @@ const CardMilaFilter = (props) => {
 
      <div className={styles.container}>
         <div className={styles.row}>  
-           <div className={styles.card}>
-             <img src={props.image} alt="" widht="100%" height="40%"></img>
+            <div className={styles.contImg}>
+             <img src={props.image} alt=""></img>
+             </div>
              <h4>{props.name}</h4>
              
              
              <p>{props.description}.</p>
              
              <h2>${props.price}</h2>
-          </div>
+          
           
         </div>
      </div>

@@ -13,6 +13,7 @@ import CardMilaFilter from './componentes/cardMilaFilter';
 import PlateFilter from './componentes/cardMilaFilter';
 import CardFilters from './componentes/cardsfilters';
 import Salon from './componentes/salon';
+import Admin from './componentes/admin';
 function App() {
   const {pathname} = useLocation();
 
@@ -25,8 +26,8 @@ function App() {
         <React.Fragment>
         
         
-        <Route path="/" element = {<Home />} />
-        
+        <Route path ="/" element = {<Home />} />
+        <Route path = "/admin" element = {<Admin/>}/>
         <Route path = "/home" element = {<Home />}/>
         <Route path='/milaparty' element = {<CardFilters/>}/>
         <Route path='/parrillaParty' element = {<CardFilters/>}/>

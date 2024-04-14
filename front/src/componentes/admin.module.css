@@ -1,0 +1,121 @@
+.filters{
+    width: 13%;
+    font-size:20px;
+    @media(max-width:768px){
+        width: 40%;
+        
+      } 
+   
+}
+.divFilter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    width: 91.5%;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.body{
+    margin-top: 20px;
+    background-color: #23394d;
+    display: flex;
+    width:100%;
+    padding-top: 1rem;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+.cardFilters{
+    border:solid;
+    border-radius: 5%;
+    width: 24%;
+    height: 400px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+    
+    @media(max-width:768px){
+        display: flex;
+        margin-left:10%;
+        width:80%;
+        padding: 0px;
+        padding-top: 170px;
+        padding-left: 10px;
+        align-items: self-start;
+        
+      } 
+}
+
+.button:hover{
+    cursor: pointer;
+    
+}
+.divimg{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 47%;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+    margin:1rem;
+}
+.divimg img{
+ padding-top: 0%;
+ border-radius: 4% 4%  4% 4%;
+ flex-wrap: wrap;
+ width: 100%;
+ height: 100%;
+ background-size:cover;
+}
+
+.cardFilters h4{
+    padding: 1px;
+    font-family:cursive;
+    font-size: 20px;
+}
+.cardFilters p{
+    display: flex;
+    padding: 0%;
+    margin: 0%;
+    font-family: cursive;
+
+}
+
+.container{
+    border:solid;
+    border-radius:1rem;
+    padding: 10px;
+    margin: 7px;
+}
+
+.createButton{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.filtro{
+    @media(max-width:768px){
+       width:32%;
+       height: 1.5rem;
+      } 
+}

@@ -28,7 +28,34 @@ async function createProduct(req, res){
 	
 };
 
+async function actualizarProduct(req, res){
+	let { id } = req.params
+	const {price, name, description, image, type} = req.body
+	
+	
+	try {
+	    const dieta = await Plate.update({
+		name,
+		price,
+		description,
+		image,
+		type,
+	},{
+	
+			where : {id : id}
+		
+	});
+
+	
+	res.send(dieta);
+ } catch (error) {
+	res.status(405).json({error: error.message});
+ }
+	
+};
+
 module.exports = {
+	actualizarProduct,
 	createProduct,
 	typesDiets
 }

@@ -40,28 +40,21 @@
 .contenedorFilters{
     margin-top: 20px;
     background-color: #23394d;
-    width: 100%;
-    min-height: 100hv;
-    
-    display:flex;
+    display: flex;
+    width:100%;
+    padding-top: 1rem;
     flex-wrap: wrap;
+    gap: 40px;
     justify-content: center;
-    align-items: center;
-    line-height: 1.5;
-    gap:20px;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
     @media(max-width:768px){
         margin-top: 10px;
         width:100%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        padding-top: 20px;
         align-items: center;
         text-align: center;
-        padding-bottom: 20px;
+        padding-bottom: 1rem;
       } 
 }
 .contenedor{

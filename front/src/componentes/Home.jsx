@@ -63,9 +63,12 @@ export default function Home() {
     function returnToFirstPage () {
         setCurrentPage(1)
     }
+
+    
+
     return (
         <>
-        
+
         <div className={styles.cont}>
    
         <Navbartres/>
@@ -80,9 +83,7 @@ export default function Home() {
             <CardSalon/>
             
             </div>
-          <div className={styles.about}>
-            <Footer/>
-          </div>
+          <div><Footer/></div>
             
             
         </div>

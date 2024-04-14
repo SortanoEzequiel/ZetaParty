@@ -27,6 +27,9 @@ export const Container = styled.div`
        justify-content: flex;
        cursor:pointer;
        border-radius: 50%;
+     
+
+       
     }
    
 }
@@ -116,6 +119,8 @@ export const Menu = styled.ul`
 export const MenuItem = styled.li`
   height: 100%;
   text-decoration: none;
+
+ 
   @media screen and (max-width: 960px) {
     width: 100%;
     height: 70px;
@@ -137,7 +142,7 @@ export const MenuItemLink = styled.a`
   font-weight: 300;
   cursor: pointer;
   transition: 0.5s all ease;
-
+  
   a{
    
     text-decoration: none;

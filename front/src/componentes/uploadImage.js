@@ -18,9 +18,9 @@ let uploadImage = async (file) => {
 		}
 	);
 
-	let img = await res.json();
+	let img = await res.json() ;
 
-
+   console.log("upload",img.secure_url);
 
 	return img.secure_url;
 };

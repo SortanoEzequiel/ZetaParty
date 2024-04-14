@@ -49,15 +49,16 @@ export default function PlateCreate() {
         name: "",
         description:"",
         image: "",
-        type: [],
+        type: "",
     })
    
    
 
    const  handleInputChange = async(e)  => {
-        if(e.target.name=== "image"){
-            let imageUrl = await uploadImage(e.target.files[0])
-            console.log(imageUrl);
+        if(e.target.name === "image"){
+            let imageUrl =  await uploadImage(e.target.files[0])
+            console.log("create",imageUrl);
+            
             setErrors(validate({
                 ...post,
                 image: imageUrl
@@ -80,12 +81,13 @@ export default function PlateCreate() {
    if(!post.type.includes(e.target.value))
    setPost({
    ...post,
-    type:[...post.type, e.target.value]})
+    type:e.target.value})
+    console.log(e.target.value);
    }
 
     
     function handleSubmit(e) {
-    //     e.preventDefault();
+        e.preventDefault();
     //     if (Object.values(errors).length > 0) alert("Por favor rellenar todos los campos")
     //     else {
     // console.log(post);
@@ -143,7 +145,7 @@ export default function PlateCreate() {
                             )}
                         </div> 
                         <div>
-                            <label>Descrip.</label>
+                            <label>Ingrs.</label>
                             <input type="text" value={post.description} name='description' onChange={e => handleInputChange(e)} />
                             {errors.description&& (
                                 <p>{errors.description}</p>

@@ -25,7 +25,7 @@ console.log(typeSalonParty);
    <div><Navbartres/></div>
   <div className={styles.cont}>
     <ul className={styles.ul}>
-        <li>San Miguel.</li>
+        <div>Nuestros servicios:</div>
         <li>Salon equipado.</li>
         <li>Equipo de profesionales.</li>
         <li>Menú formal.</li>
