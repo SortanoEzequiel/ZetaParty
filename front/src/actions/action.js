@@ -21,21 +21,21 @@ export function orderByPizza(payload){
 
 export function getPlates() {
     return async function(dispatch){
-        let res = await axios.get("http://localhost:3001/all")
+        let res = await axios.get("/all")
         return dispatch({type: GET_PLATE, payload: res.data})
     }
 }            
 
 export function searchByName(name) {
     return async function (dispatch) {
-        let res = await axios.get(`http://localhost:3001/all?name=${name}`);
+        let res = await axios.get(`/all?name=${name}`);
         return dispatch({ type: SEARCH_BY_NAME, payload: res.data })
     }
 };
 
 export function getDetail(id) {
     return async function (dispatch) {
-        let res = await axios.get(`http://localhost:3001/plate/${id}`);
+        let res = await axios.get(`/plate/${id}`);
         return dispatch({ type: GET_PLATE_DETAIL, payload: res.data })
     }
 };
@@ -53,7 +53,7 @@ export function vaciarDetail(payload){
 export function postPlate (input) {
     return async function (dispatch){
         try {
-            const res = await axios.post(`http://localhost:3001/create`, input);
+            const res = await axios.post(`/create`, input);
             return dispatch({ type:POST_PLATE, payload: res.data})
         } catch (error) {
            console.log(error);
@@ -67,7 +67,7 @@ export function updateProduct (post) {
     return async function (dispatch) {
        
         try {
-            const dbData = await axios.post(`http://localhost:3001/update/${id}`, post);
+            const dbData = await axios.post(`/update/${id}`, post);
             console.log(dbData);
             return dispatch({ type:UPDATE_PLATE, payload:dbData.data});
            
@@ -80,7 +80,7 @@ export function updateProduct (post) {
 export function deletePlate (id) {
     return async function (dispatch){
         try {
-            const res = await axios.get(`http://localhost:3001/delete/${id}`);
+            const res = await axios.get(`/delete/${id}`);
             return dispatch({ type:DELETE_PLATE, payload: res.data})
         } catch (error) {
            console.log(error);

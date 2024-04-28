@@ -1,7 +1,8 @@
 const {Plate, Types} = require('../db.js');
+const db = require('../db.js');
 
 const getAll = async (name) => {
-	let allData = await Plate.findAll()
+	let allData = await db.Plate.findAll()
 	if(name){
 		const plate = allData.filter((e) => e.name.toLowerCase().includes(name.toLowerCase())) 
 		return plate

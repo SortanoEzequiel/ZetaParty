@@ -8,6 +8,7 @@ const router = Router();
 
 //enviamos a la request por diferentes rutas para modularizar
 
+
 router.post("/update/:id", actualizarProduct)
 router.post("/create", createProduct);
 router.use("/delete/:id", deletePlate);

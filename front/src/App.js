@@ -14,6 +14,11 @@ import PlateFilter from './componentes/cardMilaFilter';
 import CardFilters from './componentes/cardsfilters';
 import Salon from './componentes/salon';
 import Admin from './componentes/admin';
+import axios from 'axios';
+
+axios.defaults.baseURL = "http://localhost:3001/"
+
+
 function App() {
   const {pathname} = useLocation();
 
