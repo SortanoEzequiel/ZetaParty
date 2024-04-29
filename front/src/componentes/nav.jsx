@@ -17,7 +17,8 @@ import {
   FaUserAlt,
   FaBriefcase,
   FaGlasses,
-  FaUtensils  ,
+  FaUtensils,  
+  FaProcedures,
 
 } from "react-icons/fa";
 import { IconContext } from "react-icons";
@@ -25,10 +26,11 @@ import logo from "../imagen/zeta.jpg"
 import {Link} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from "./LogoutButton";
-
-
+require('dotenv').config();
+const {NAME} = process.env;
 
 const Navbartres = () => {
+  
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const {loginWithRedirect, isAuthenticated, user} = useAuth0()
   return (
@@ -58,7 +60,7 @@ const Navbartres = () => {
                 </div>
               </MenuItemLink>
             </MenuItem>
-            { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
+            { isAuthenticated && user.name === NAME ? (
                     <MenuItem>
                     <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}><div>
                                        
