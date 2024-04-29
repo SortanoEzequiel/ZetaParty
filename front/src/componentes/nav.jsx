@@ -26,8 +26,7 @@ import logo from "../imagen/zeta.jpg"
 import {Link} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from "./LogoutButton";
-require('dotenv').config();
-const {NAME} = process.env;
+
 
 const Navbartres = () => {
   
