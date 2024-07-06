@@ -15,10 +15,6 @@ server.use(cookieParser());
 server.use(morgan('dev'));
 server.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', 'https://lo-de-zeta.vercel.app');
-	// res.header(
-	// 	'Access-Control-Allow-Origin',
-	// 	'https://proyecto-final-henry-nu.vercel.app'
-	// );
 	res.header('Access-Control-Allow-Credentials', 'true');
 	res.header(
 		'Access-Control-Allow-Headers',

@@ -59,7 +59,7 @@ const Navbartres = () => {
                 </div>
               </MenuItemLink>
             </MenuItem>
-            { isAuthenticated && user.name === 'Gonzalo López' ? (
+            { isAuthenticated && user.name === 'Ezequiel Sortano' ? (
                     <MenuItem>
                     <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}><div>
                                        
@@ -74,7 +74,7 @@ const Navbartres = () => {
 
                
                
-         { isAuthenticated && user.name === 'Gonzalo López'  ? (
+         { isAuthenticated && user.name === 'Ezequiel Sortano'  ? (
           <MenuItem>
           <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}><div>
           <FaBriefcase />
